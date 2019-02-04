@@ -6,6 +6,17 @@
  '(package-selected-packages (quote (gradle-mode eclim))))
 (custom-set-faces
  )
+
+(menu-bar-mode -1)
+
+(tool-bar-mode -1) 
+
+(toggle-scroll-bar -1) 
+
+(setq inhibit-startup-screen t)
+
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 (require 'eclim)
 (add-hook 'java-mode-hook 'eclim-mode)
 (require 'eclimd)
