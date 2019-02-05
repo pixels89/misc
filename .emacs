@@ -62,6 +62,6 @@
 
 (global-set-key (kbd "C-x g") 'magit-status)
 
-(setq backup-directory-alist `(("." . "~/.saves")))
+(setq backup-directory-alist `(("." . "~/.emacsSaves")))
 
 (setq backup-by-copying t)
