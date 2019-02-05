@@ -9,8 +9,8 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
- '(custom-enabled-themes (quote (misterioso)))
- '(package-selected-packages (quote (magit gradle-mode eclim))))
+ '(custom-enabled-themes (quote (tango-dark)))
+ '(package-selected-packages (quote (smex magit))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -31,7 +31,15 @@
  '(company-tooltip-search ((t (:background "brightwhite" :foreground "black"))))
  '(company-tooltip-selection ((t (:background "color-253" :foreground "black")))))
 
-(menu-bar-mode -1)
+
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+(ido-mode 1)
+
+(menu-bar-mode 0)
 
 (if (functionp 'tool-bar-mode) (tool-bar-mode 0))
 
@@ -41,30 +49,13 @@
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-(require 'eclim)
-(add-hook 'java-mode-hook 'eclim-mode)
-(require 'eclimd)
-
-(require 'gradle-mode)
-(add-hook 'java-mode-hook '(lambda() (gradle-mode 1)))
-
-(defun build-and-run ()
-	(interactive)
-	(gradle-run "build run"))
-
-(define-key gradle-mode-map (kbd "C-c C-r") 'build-and-run)
-
  (require 'company)
 (global-company-mode t)
-
-
-  (require 'company-emacs-eclim)
-(company-emacs-eclim-setup)
-
 
 (global-set-key (kbd "C-x g") 'magit-status)
 
 (setq backup-directory-alist `(("." . "~/.emacsSaves")))
 
 (setq backup-by-copying t)
+(set-cursor-color "#ff7f50")
 ;; this is a test commit
