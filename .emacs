@@ -10,7 +10,7 @@
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(custom-enabled-themes (quote (misterioso)))
- '(package-selected-packages (quote (magit gradle-mode eclim))))
+ '(package-selected-packages (quote (magit))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -41,29 +41,13 @@
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-(require 'eclim)
-(add-hook 'java-mode-hook 'eclim-mode)
-(require 'eclimd)
-
-(require 'gradle-mode)
-(add-hook 'java-mode-hook '(lambda() (gradle-mode 1)))
-
-(defun build-and-run ()
-	(interactive)
-	(gradle-run "build run"))
-
-(define-key gradle-mode-map (kbd "C-c C-r") 'build-and-run)
-
  (require 'company)
 (global-company-mode t)
-
-
-  (require 'company-emacs-eclim)
-(company-emacs-eclim-setup)
-
 
 (global-set-key (kbd "C-x g") 'magit-status)
 
 (setq backup-directory-alist `(("." . "~/.emacsSaves")))
 
 (setq backup-by-copying t)
+
+(set-cursor-color "#ff7f50")
