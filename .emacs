@@ -53,3 +53,4 @@
 (company-emacs-eclim-setup)
 
 
+(global-set-key (kbd "C-x g") 'magit-status)
