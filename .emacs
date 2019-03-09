@@ -1,7 +1,24 @@
+;; use-package setup
+(require 'package)
+(setq package-enable-at-startup nil) ; dont do it immediately
+(setq package-archives '(("org"       . "http://orgmode.org/elpa/")
+             ("gnu"       . "http://elpa.gnu.org/packages/")
+             ("melpa"     . "https://melpa.org/packages/")))
 (package-initialize)
 
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+;; Bootstrap use-package
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents) ; update archives
+  (package-install 'use-package)) ; grab the newest use-package
+
+;; Define packages
+(require 'use-package)
+
+;; Always download if not available
+(setq use-package-always-ensure t)
+
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
