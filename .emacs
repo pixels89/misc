@@ -17,7 +17,8 @@
 ;; Always download if not available
 (setq use-package-always-ensure t)
 
-
+;; Pull in ./lisp/*
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
