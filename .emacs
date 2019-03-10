@@ -129,8 +129,10 @@
 
 
     ;; Choose a color for mode-line.(Default: blue)
-    (moe-theme-set-color 'green)
+    (moe-theme-set-color 'purple)
 
     ;; Finally, apply moe-theme now.
     ;; Choose what you like, (moe-light) or (moe-dark)
     (moe-dark)
+
+(powerline-moe-theme)
