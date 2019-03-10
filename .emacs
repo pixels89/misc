@@ -25,7 +25,7 @@
 
 (require 'ido-vertical-mode)
 (ido-mode 1)
-(setq ido-use-faces t)
+
 (setq ido-use-faces t)
 (set-face-attribute 'ido-vertical-first-match-face nil
                     :background nil
@@ -40,13 +40,9 @@
 (ido-vertical-mode 1)
 (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 
-
-
 (setq ivy-use-virtual-buffers t)
 (setq ivy-count-format "(%d/%d) ")
 
-
-(ido-mode 1)
 (global-set-key (kbd "C-s") 'swiper)
 
 (global-set-key (kbd "M-x") 'counsel-M-x)
@@ -91,15 +87,6 @@
 (global-display-line-numbers-mode t )
 (menu-bar-mode -1) ; no need for the menu bars - we've got key combos for that!
 
-
-
-;;(global-set-key (kbd "M-x") 'smex)
-;;(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-;; This is your old M-x.
-;;(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-
-;;(ido-mode 1)
-
 (if (functionp 'tool-bar-mode) (tool-bar-mode 0))
 
 (if (functionp 'toggle-scroll-bar ) (toggle-scroll-bar 0))
@@ -108,7 +95,6 @@
 
 (global-set-key (kbd "C-x g") 'magit-status)
 
-(setq backup-directory-alist `(("." . "~/.emacsSaves")))
 
 (setq backup-by-copying t)
 (set-cursor-color "#ff7f50")
