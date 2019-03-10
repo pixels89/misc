@@ -38,15 +38,14 @@
 (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
+;;ivy counsel and swiper configurations
 (setq ivy-use-virtual-buffers t)
 (setq ivy-count-format "(%d/%d) ")
 
 (global-set-key (kbd "C-s") 'swiper)
-
 (global-set-key (kbd "M-x") 'counsel-M-x)
-;;(global-set-key (kbd "C-x C-f") 'counsel-find-file)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (require 'init-flycheck)
 
@@ -57,6 +56,9 @@
 (require 'init-smartparens)
 
 (require 'init-neotree)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -73,6 +75,7 @@
    (quote
     (powerline moe-theme ido-vertical-mode async bind-key company counsel dash epl flycheck git-commit lv neotree pkg-info smartparens swiper transient use-package which-key with-editor ivy smex magit))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
 
@@ -112,27 +115,20 @@
  ;; If there is more than one, they won't work right.
  )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-    ;; If you want to use powerline, (require 'powerline) must be
-    ;; before (require 'moe-theme).
+;; If you want to use powerline, (require 'powerline) must be
+;; before (require 'moe-theme).
 
-    (require 'moe-theme)
+;; Moe-theme
+(require 'moe-theme)
+;; Show highlighted buffer-id as decoration. (Default: nil)
+(setq moe-theme-highlight-buffer-id t)
 
-    ;; Moe-theme
-    (require 'moe-theme)
+;; Choose a color for mode-line.(Default: blue)
+(moe-theme-set-color 'purple)
 
-    ;; Show highlighted buffer-id as decoration. (Default: nil)
-    (setq moe-theme-highlight-buffer-id t)
-
-    ;; Resize titles (optional).
-
-
-    ;; Choose a color for mode-line.(Default: blue)
-    (moe-theme-set-color 'purple)
-
-    ;; Finally, apply moe-theme now.
-    ;; Choose what you like, (moe-light) or (moe-dark)
-    (moe-dark)
+(moe-dark)
 
 (powerline-moe-theme)
 
