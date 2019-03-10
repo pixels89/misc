@@ -66,10 +66,17 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
- '(custom-enabled-themes (quote (tango-dark)))
+ '(custom-enabled-themes (quote (moe-dark)))
+ '(custom-safe-themes
+   (quote
+    ("e61752b5a3af12be08e99d076aedadd76052137560b7e684a8be2f8d2958edc3" "13d20048c12826c7ea636fbe513d6f24c0d43709a761052adbca052708798ce3" "26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" default)))
  '(package-selected-packages
    (quote
-    (ido-vertical-mode async bind-key company counsel dash epl flycheck git-commit lv neotree pkg-info smartparens swiper transient use-package which-key with-editor ivy smex magit))))
+    (powerline moe-theme ido-vertical-mode async bind-key company counsel dash epl flycheck git-commit lv neotree pkg-info smartparens swiper transient use-package which-key with-editor ivy smex magit))))
+
+
+
+
 
 (setq delete-old-versions -1 ) ; delete excess backups silently
 (setq version-control t )
@@ -105,3 +112,25 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+
+    ;; If you want to use powerline, (require 'powerline) must be
+    ;; before (require 'moe-theme).
+
+    (require 'moe-theme)
+
+    ;; Moe-theme
+    (require 'moe-theme)
+
+    ;; Show highlighted buffer-id as decoration. (Default: nil)
+    (setq moe-theme-highlight-buffer-id t)
+
+    ;; Resize titles (optional).
+
+
+    ;; Choose a color for mode-line.(Default: blue)
+    (moe-theme-set-color 'green)
+
+    ;; Finally, apply moe-theme now.
+    ;; Choose what you like, (moe-light) or (moe-dark)
+    (moe-dark)
