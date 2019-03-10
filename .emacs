@@ -20,12 +20,11 @@
 ;; Pull in ./lisp/*
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
-;;(require 'init-ivy)
 
 
+;; Ido vertical configurations
 (require 'ido-vertical-mode)
 (ido-mode 1)
-
 (setq ido-use-faces t)
 (set-face-attribute 'ido-vertical-first-match-face nil
                     :background nil
@@ -35,10 +34,10 @@
                     :foreground nil)
 (set-face-attribute 'ido-vertical-match-face nil
                     :foreground nil)
-
-
 (ido-vertical-mode 1)
 (setq ido-vertical-define-keys 'C-n-and-C-p-only)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 (setq ivy-use-virtual-buffers t)
 (setq ivy-count-format "(%d/%d) ")
@@ -136,3 +135,5 @@
     (moe-dark)
 
 (powerline-moe-theme)
+
+(global-set-key [(control x) (k)] 'kill-this-buffer)
