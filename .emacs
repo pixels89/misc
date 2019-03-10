@@ -22,18 +22,35 @@
 
 ;;(require 'init-ivy)
 
-(ivy-mode 1)
+
+(require 'ido-vertical-mode)
+(ido-mode 1)
+(setq ido-use-faces t)
+(setq ido-use-faces t)
+(set-face-attribute 'ido-vertical-first-match-face nil
+                    :background nil
+                    :foreground "orange")
+(set-face-attribute 'ido-vertical-only-match-face nil
+                    :background nil
+                    :foreground nil)
+(set-face-attribute 'ido-vertical-match-face nil
+                    :foreground nil)
+
+
+(ido-vertical-mode 1)
+(setq ido-vertical-define-keys 'C-n-and-C-p-only)
+
+
+
 (setq ivy-use-virtual-buffers t)
 (setq ivy-count-format "(%d/%d) ")
 
+
+(ido-mode 1)
 (global-set-key (kbd "C-s") 'swiper)
+
 (global-set-key (kbd "M-x") 'counsel-M-x)
-(global-set-key (kbd "C-x C-f") 'counsel-find-file)
-(global-set-key (kbd "<f1> f") 'counsel-describe-function)
-(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
-(global-set-key (kbd "<f1> l") 'counsel-find-library)
-(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
-(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+;;(global-set-key (kbd "C-x C-f") 'counsel-find-file)
 
 
 (require 'init-flycheck)
@@ -56,7 +73,7 @@
  '(custom-enabled-themes (quote (tango-dark)))
  '(package-selected-packages
    (quote
-    (async bind-key company counsel dash epl flycheck git-commit lv neotree pkg-info smartparens swiper transient use-package which-key with-editor ivy smex magit))))
+    (ido-vertical-mode async bind-key company counsel dash epl flycheck git-commit lv neotree pkg-info smartparens swiper transient use-package which-key with-editor ivy smex magit))))
 
 (setq delete-old-versions -1 ) ; delete excess backups silently
 (setq version-control t )
