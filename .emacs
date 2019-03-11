@@ -133,3 +133,5 @@
 (powerline-moe-theme)
 
 (global-set-key [(control x) (k)] 'kill-this-buffer)
+
+(windmove-default-keybindings)
