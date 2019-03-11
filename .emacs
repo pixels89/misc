@@ -99,8 +99,8 @@
 ;(when (version> "26.0.50" emacs-version )
   (global-linum-mode t)
 
-(when (version<= "26.0.50" emacs-version )
-  (global-display-line-numbers-mode))
+;(when (version<= "26.0.50" emacs-version )
+ ; (global-display-line-numbers-mode))
 (menu-bar-mode -1) ; no need for the menu bars - we've got key combos for that!
 
 (if (functionp 'tool-bar-mode) (tool-bar-mode 0))
