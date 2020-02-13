@@ -32,7 +32,9 @@
 (ido-mode 1)
 (setq ido-use-faces t)
 (set-face-attribute 'ido-vertical-first-match-face nil
-                    :background nil
+      
+
+              :background nil
                     :foreground "orange")
 (set-face-attribute 'ido-vertical-only-match-face nil
                     :background nil
@@ -75,7 +77,7 @@
  '(custom-enabled-themes (quote (moe-dark)))
  '(custom-safe-themes
    (quote
-    ("e61752b5a3af12be08e99d076aedadd76052137560b7e684a8be2f8d2958edc3" "13d20048c12826c7ea636fbe513d6f24c0d43709a761052adbca052708798ce3" "26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" default)))
+    ("008dec0f293f1fc5c1125dfd74125078b32fbe3a6e6348589b071989364bdbbd" "e61752b5a3af12be08e99d076aedadd76052137560b7e684a8be2f8d2958edc3" "13d20048c12826c7ea636fbe513d6f24c0d43709a761052adbca052708798ce3" "26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" default)))
  '(package-selected-packages
    (quote
     (all-the-icons meghanada powerline moe-theme ido-vertical-mode async bind-key company counsel dash epl flycheck git-commit lv neotree pkg-info smartparens swiper transient use-package which-key with-editor ivy smex magit))))
