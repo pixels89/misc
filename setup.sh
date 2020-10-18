@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#sudo apt-get update && sudo apt-get upgrade -y
+
 mkdir ~/dvhome
 mkdir ~/dvhome/code
 mkdir ~/dvhome/notes
@@ -60,5 +62,23 @@ sudo echo "" > /etc/environment
 #path
 
 #javahome, m2, go
+
+#node, go
+#vlc, spotify
+
+#screenshot tool, mspaint/gimp
+#screen recorder
+#retro term
+
+#task manager in each monitor
+
+#startup apps
+
+#ubuntu cleaner
+
+#$ sudo apt-get install Ubuntu-restricted-extras
+#$ sudo ufw enable
+
+
 
 
