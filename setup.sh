@@ -42,7 +42,7 @@ sudo apt -y install gnome-tweak-tool
 echo "INSTALLING DEFAULT JAVA JDK"
 sudo apt -y install default-jdk
 sudo java -version
-
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 sudo echo "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64" >> /etc/profile
 
 echo "INSTALLING GIT"
