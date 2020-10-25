@@ -2,3 +2,5 @@
 .classpath
 .project
 /.settings
+emacs.d/auto-save-list/
+emacs.d/backups/

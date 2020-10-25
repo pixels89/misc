@@ -96,7 +96,6 @@
 (setq coding-system-for-write 'utf-8)
 (setq sentence-end-double-space nil)
 (setq-default fill-column 80) ; toggle wrapping text at this column
-(setq initial-scratch-message "EEEEEEEEEEEmacs...macs...(macs)... Hi Mukesh." ) ; You should probably change this
 ;(global-display-line-numbers-mode t )
 ;(when (version> "26.0.50" emacs-version )
   (global-linum-mode t)

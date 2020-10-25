@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=Swap
+Exec=xmodmap -e "keycode 134 = Control_R" && xmodmap -e "keycode 105 = Super_R"
+Type=Application
