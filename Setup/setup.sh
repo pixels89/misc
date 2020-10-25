@@ -119,7 +119,8 @@ sudo apt-get -y install meld
 
 
 
-
+#key swaps
+#sleep after
 
 
 
