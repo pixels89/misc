@@ -1,6 +1,5 @@
 #!/bin/bash
 
-sudo apt-get update && sudo apt-get upgrade -y
 
 mkdir ~/dvhome
 mkdir ~/dvhome/code
@@ -14,6 +13,7 @@ sudo add-apt-repository -y universe
 sudo add-apt-repository -y ppa:vantuz/cool-retro-term
 sudo add-apt-repository -y ppa:pinta-maintainers/pinta-stable
 sudo add-apt-repository -y ppa:teejee2008/ppa
+sudo add-apt-repository -y multiverse
 sudo apt-get update
 
 sudo apt-get -y  install timeshift
@@ -43,22 +43,11 @@ echo "INSTALLING DEFAULT JAVA JDK"
 sudo apt -y install default-jdk
 sudo java -version
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
-sudo echo "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64" >> /etc/profile
+sudo bash -c 'echo "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64" >> /etc/profile'
 
 echo "INSTALLING GIT"
 sudo apt -y install git-all
 git --version
-
-cd ~/dvhome/scripts
-git clone https://github.com/pixels89/misc
-ln -s ~/dvhome/scripts/misc/.emacs ~/.emacs
-ln -s ~/dvhome/scripts/misc/emacs.d ~/.emacs.d
-
-cd -
-echo "INSTALLING EMACS27"
-sudo apt -y install emacs27
-
-
 echo "INSTALLING INTELLIJ"
 sudo snap install intellij-idea-community --classic
 
@@ -82,9 +71,9 @@ sudo tar -C /usr/local -xzf go1.15.3.linux-amd64.tar.gz
 export GOPATH=~/dvhome/repo/go/packages
 export GOROOT=/usr/local/go/bin
 export PATH=$PATH:/usr/local/go/bin
-sudo echo "export GOROOT=/usr/local/go/bin" >> /etc/profile
-sudo echo "export GOPATH=~/dvhome/repo/go/packages" >> /etc/profile
-sudo echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
+sudo bash -c 'echo "export GOROOT=/usr/local/go/bin" >> /etc/profile'
+sudo bash -c 'echo "export GOPATH=~/dvhome/repo/go/packages" >> /etc/profile'
+sudo bash -c 'echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile'
 go version
 
 cd-
@@ -111,11 +100,27 @@ sudo ufw enable
 echo "INSTALLING MAVEN"
 sudo apt -y install maven
 
-sudo echo "export M2_HOME=/opt/maven" >> /etc/profile
-sudo echo "export MAVEN_HOME=/opt/maven" >> /etc/profile
-sudo echo "export PATH=${M2_HOME}/bin:${PATH}" >> /etc/profile
+sudo bash -c 'echo "export M2_HOME=/opt/maven" >> /etc/profile'
+sudo bash -c 'echo "export MAVEN_HOME=/opt/maven" >> /etc/profile'
+sudo bash -c 'echo "export PATH=${M2_HOME}/bin:${PATH}" >> /etc/profile'
 
 mvn -version
+
+sudo apt install steam
+
+
+
+sudo apt-get install -y dconf-editor
+
+
+sudo apt-get -y install meld
+
+
+
+
+
+
+
 
 
 sudo apt-get remove -y --auto-remove rhythmbox
@@ -124,8 +129,22 @@ sudo apt-get remove --purge libreoffice*
 
 sudo apt-get -y  purge thunderbird*
 
+sudo apt-get autoclean
 sudo apt-get clean
 sudo apt-get -y autoremove
+
+sudo bash -c 'echo "enabled=0" > /etc/default/apport'
+
+
+echo "INSTALLING EMACS27"
+#sudo apt -y install emacs27
+
+cd ~/dvhome/scripts
+git clone https://github.com/pixels89/misc
+ln -s ~/dvhome/scripts/misc/.emacs ~/.emacs
+ln -s ~/dvhome/scripts/misc/emacs.d ~/.emacs.d
+
+cd -
 
 #launch bar on each monitor
 #clean launch bar 
